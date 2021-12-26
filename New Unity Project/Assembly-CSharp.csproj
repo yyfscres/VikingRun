@@ -53,13 +53,14 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\SceneSwitcher.cs" />
+    <Compile Include="Assets\Script\SceneSwitcher.cs" />
     <Compile Include="Assets\Coin_spawner.cs" />
     <Compile Include="Assets\BridgeSendor.cs" />
+    <Compile Include="Assets\Script\LandManager.cs" />
     <Compile Include="Assets\GameIcon.cs" />
     <Compile Include="Assets\ExitGame.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
-    <Compile Include="Assets\LandManager.cs" />
+    <Compile Include="Assets\Script\NewBehaviourScript.cs" />
+    <Compile Include="Assets\CoinSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resource\Fonts\OFL.txt" />
