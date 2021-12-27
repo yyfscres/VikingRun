@@ -45,7 +45,28 @@ public class LandManager : MonoBehaviour
     }
     public void SpawnLand(int landIndext)
     {
+        if (landIndext == 4)
+        {
+            GameObject land = Instantiate(landPrefabs[landIndext], transform.forward * forwardSpawn + transform.right * rightSpawn, Quaternion.Euler(0, 0, 0));
+            CoinSpawn(land);
+            if (rotate == 0)
+            {
 
+                rotate = 1;
+                rightSpawn += 15;
+                Instantiate(landPrefabs[landIndext], transform.forward * forwardSpawn + transform.right * rightSpawn, Quaternion.Euler(0, 90, 0));
+                rightSpawn += 15;
+            }
+            else if (rotate == 1)
+            {
+                rotate = 0;
+                forwardSpawn += 15;
+                Instantiate(landPrefabs[landIndext], transform.forward * forwardSpawn + transform.right * rightSpawn, Quaternion.Euler(0, 0, 0));
+                forwardSpawn += 15;
+            }
+
+
+        }
         if (landIndext == 3)
         {
             GameObject land = Instantiate(landPrefabs[landIndext], transform.forward * forwardSpawn + transform.right * rightSpawn, Quaternion.Euler(0, 0, 0));
@@ -68,7 +89,30 @@ public class LandManager : MonoBehaviour
             
 
         }
-        if(landIndext != 3)
+        if (landIndext == 2)
+        {
+            if (rotate == 0)
+            {
+                GameObject land = Instantiate(landPrefabs[landIndext], transform.forward * forwardSpawn + transform.right * rightSpawn, Quaternion.Euler(0, 90*Random.Range(0,4), 0));
+                int h = Random.Range(0, 2);
+                if (h == 1)
+                {
+                    CoinSpawn(land);
+                }
+                forwardSpawn += 15;
+            }
+            else if (rotate == 1)
+            {
+                GameObject land = Instantiate(landPrefabs[landIndext], transform.forward * forwardSpawn + transform.right * rightSpawn, Quaternion.Euler(0, 90 * Random.Range(0, 4), 0));
+                int h = Random.Range(0, 2);
+                if (h == 1)
+                {
+                    CoinSpawn(land);
+                }
+                rightSpawn += 15;
+            }
+        }
+        if(landIndext < 2)
         {
             
             if (rotate == 0)
@@ -102,55 +146,55 @@ public class LandManager : MonoBehaviour
         {
             if (i == 0)
             {
-                Instantiate(coins[Random.Range(0, 3)], land.transform.position, Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], land.transform.position, Quaternion.Euler(0, 0, 0));
             }
             if (i == 1)
             {
                 Vector3 position = land.transform.position;
                
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x - 5f, position.y - 0, position.z), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x - 5f, position.y - 0, position.z), Quaternion.Euler(0, 0, 0));
             }
             if (i == 2)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x - 5f, position.y , position.z-5f), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x - 5f, position.y , position.z-5f), Quaternion.Euler(0, 0, 0));
             }
             if (i == 3)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x - 5f, position.y , position.z+5f), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x - 5f, position.y , position.z+5f), Quaternion.Euler(0, 0, 0));
             }
             if (i == 4)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x , position.y, position.z + 5f), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x , position.y, position.z + 5f), Quaternion.Euler(0, 0, 0));
             }
             if (i == 5)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x+5f, position.y, position.z + 5f), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x+5f, position.y, position.z + 5f), Quaternion.Euler(0, 0, 0));
             }
             if (i == 6)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x + 5f, position.y, position.z ), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x + 5f, position.y, position.z ), Quaternion.Euler(0, 0, 0));
             }
             if (i == 7)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x + 5f, position.y, position.z - 5f), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x + 5f, position.y, position.z - 5f), Quaternion.Euler(0, 0, 0));
             }
             if (i == 8)
             {
                 Vector3 position = land.transform.position;
 
-                Instantiate(coins[Random.Range(0, 3)], new Vector3(position.x , position.y, position.z ), Quaternion.Euler(0, 0, 0));
+                Instantiate(coins[Random.Range(0, 4)], new Vector3(position.x , position.y, position.z ), Quaternion.Euler(0, 0, 0));
             }
 
         }

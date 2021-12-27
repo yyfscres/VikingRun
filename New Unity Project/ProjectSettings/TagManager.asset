@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Floor
   - Mushroom
-  - mushroom
+  - Mushroom1
+  - Mushroom2
+  - Mushroom3
+  - Diamond
   layers:
   - Default
   - TransparentFX
