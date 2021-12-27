@@ -152,7 +152,7 @@ public class NewBehaviourScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if(collision.gameObject.tag==("Floor") && grounded == false)
+        if((collision.gameObject.tag==("Floor") || collision.gameObject.tag == ("Stone")) && grounded == false)
         {
             grounded = true;
         }
